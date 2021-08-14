@@ -121,7 +121,7 @@ target_include_directories(glfw PRIVATE
 target_link_libraries(glfw PRIVATE Threads::Threads ${glfw_LIBRARIES})
 
 # Workaround for CMake not knowing about .m files before version 3.16
-if ("${CMAKE_VERSION}" VERSION_LESS "3.16" AND APPLE)
+if (CMAKE_VERSION VERSION_LESS "3.16" AND APPLE)
     set_source_files_properties(cocoa_init.m cocoa_joystick.m cocoa_monitor.m
                                 cocoa_window.m nsgl_context.m PROPERTIES
                                 LANGUAGE C)
@@ -187,6 +187,13 @@ if (MSVC90)
     check_include_file(dinput.h DINPUT_H_FOUND)
     if (NOT DINPUT_H_FOUND)
         message(FATAL_ERROR "DirectX 9 headers not found; install DirectX 9 SDK")
+    endif()
+endif()
+
+# Workaround for -std=c99 on Linux disabling _DEFAULT_SOURCE (POSIX 2008 and more)
+if (_GLFW_X11 OR _GLFW_WAYLAND OR _GLFW_OSMESA)
+    if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
+        target_compile_definitions(glfw PRIVATE _DEFAULT_SOURCE)
     endif()
 endif()
 
