@@ -53,6 +53,7 @@ video tutorials.
  - Ralph Eastwood
  - Fredrik Ehnbom
  - Robin Eklind
+ - Jan Ekström
  - Siavash Eliasi
  - Ahmad Fatoum
  - Felipe Ferreira
@@ -76,6 +77,7 @@ video tutorials.
  - Paul Holden
  - Warren Hu
  - Charles Huber
+ - InKryption
  - IntellectualKitty
  - Aaron Jacobs
  - Erik S. V. Jansson
