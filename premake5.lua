@@ -3,8 +3,8 @@ project "GLFW"
 	language "C"
 	staticruntime "On"
 
-	targetdir ("%{wks.location}/bin/" .. outputdir .. "/")
-	objdir ("%{wks.location}/bin-int/" .. outputdir .. "/")
+	targetdir ("%{wks.location}/bin/" .. bin_folder .. "/") --make a variable called "bin_folder" in main premake5.lua file
+	objdir ("%{wks.location}/bin/" .. bin_folder .. "/obj")
 
 	files
 	{
@@ -22,7 +22,7 @@ project "GLFW"
 		pic "On"
 
 		systemversion "latest"
-		
+
 		files
 		{
 			"src/x11_init.c",
@@ -58,8 +58,8 @@ project "GLFW"
 			"src/osmesa_context.c"
 		}
 
-		defines 
-		{ 
+		defines
+		{
 			"_GLFW_WIN32",
 			"_CRT_SECURE_NO_WARNINGS"
 		}
