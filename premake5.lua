@@ -1,7 +1,7 @@
 project "GLFW"
 	kind "StaticLib"
 	language "C"
-	--staticruntime "On"
+	staticruntime "on"
 
 	targetdir ("%{wks.location}/bin/" .. bin_folder .. "/") -- make a variable called "bin_folder" in main premake5.lua file
 	objdir ("%{wks.location}/bin/" .. bin_folder .. "/obj")
@@ -99,3 +99,4 @@ project "GLFW"
 	filter "configurations:Production"
 		runtime "Release"
 		optimize "on"
+		symbols "off"
