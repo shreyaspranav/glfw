@@ -238,9 +238,7 @@ extern "C" {
 
  #else /*__APPLE__*/
 
-  //============ EDIT MADE BU Vertex Engine ===============
-  // commented on #include <GL/gl.h>
-  //#include <GL/gl.h>
+  #include <GL/gl.h>
   #if defined(GLFW_INCLUDE_GLEXT)
    #include <GL/glext.h>
   #endif
