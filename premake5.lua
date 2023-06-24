@@ -3,8 +3,8 @@ project "GLFW"
 	language "C"
 	staticruntime "on"
 
-	targetdir ("%{wks.location}/bin/" .. bin_folder .. "/") -- make a variable called "bin_folder" in main premake5.lua file
-	objdir ("%{wks.location}/bin/" .. bin_folder .. "/obj")
+	targetdir ("%{wks.location}/bin/" .. bin_folder .. "/bin/%{prj.name}")
+	objdir ("%{wks.location}/bin/" .. bin_folder .. "/obj/%{prj.name}")
 
 	files
 	{
